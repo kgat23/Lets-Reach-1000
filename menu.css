@@ -1,0 +1,24 @@
+.menufont{
+    border: 0px;
+    width: fit-content;
+    margin-left: 30%;
+    font-size: 70px;
+    background-color: burlywood;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    padding: 27px;
+    color: azure;
+}
+
+button{
+    width: 200px;
+    height: 100px;
+    background-color: bisque;
+    font-size: 40px;
+    border-radius: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
