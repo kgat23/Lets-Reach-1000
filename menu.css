@@ -1,0 +1,88 @@
+/* .menufont{
+    border: 0px;
+    width: fit-content;
+    margin-left: 30%;
+    font-size: 70px;
+    background-color: burlywood;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    padding: 27px;
+    color: azure;
+}
+
+button{
+    width: 200px;
+    height: 100px;
+    background-color: bisque;
+    font-size: 40px;
+    border-radius: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+} */
+
+body{
+    background-image: url('background.png');
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left: 0%;
+    background-color: green;
+    margin-bottom: 0px;
+    /* margin-bottom: 0%; */
+}
+
+.menufont{
+    background-image: url('wooden-sign-hung-from-rope-removebg-preview\ 1.png');
+    width: 532px;
+    height: 255px;
+    margin-left: 420px;
+    margin-top: -15px;
+    background-repeat: no-repeat;
+}
+
+.menu-items{
+    background-image: url('wood-2-removebg-preview.png');
+    width: 320px;
+    height: 455px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-top: -30px;
+    margin-left: 540px;
+    margin-bottom: 0px;
+}
+
+.mainFont{
+    font-family: fantasy;
+    padding-top: 127px;
+    padding-left: 96px;
+    font-size: 50px;
+}
+
+.mainItems{
+    background: none;
+    border: 0px;
+    font-family: fantasy;
+    font-size: 48px;
+}
+
+#start{
+    margin-left: 81px;
+    margin-top: 79px;
+    color: gold;
+}
+
+#scores{
+    margin-left: 72px;
+    margin-top: 9px;
+    color: gold;
+}
+
+#exit{
+    margin-left: 102px;
+    margin-top: 16px;
+    color: gold;
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Number Addition</title>
+  <link href="styles.css" rel="stylesheet" type="text/css">
+  <!-- <link href="utils.css" rel="stylesheet" type="text/css"> -->
+</head>
+<body>
+  <!-- <script>
+    alert("Hello, welcome to Let's reach 1000. You have to keep on adding till you reach 1000. Press ok to start playing.")
+  </script> -->
+<style>
+  #game-content{
+    display: block;
+  }
+  #box,#box2{
+    display: none;
+  }
+</style>
+<div id="game-content">
+  <div class="menufont">
+    <input type="text" id="num1" readonly> +
+    <input type="text" id="num2" readonly> =
+    <input type="text" id="result" readonly><br>
+  </div>
+  <div class="numpad">
+    <div class="row">
+    <button onclick="appendNumber(7)" class="numbers">7</button>
+    <button onclick="appendNumber(8)" class="numbers">8</button>
+    <button onclick="appendNumber(9)" class="numbers">9</button>
+    </div>
+    <div class="row">
+    <button onclick="appendNumber(4)" class="numbers">4</button>
+    <button onclick="appendNumber(5)" class="numbers">5</button>
+    <button onclick="appendNumber(6)" class="numbers">6</button>
+    </div>
+    <div class="row">
+    <button onclick="appendNumber(1)" class="numbers">1</button>
+    <button onclick="appendNumber(2)" class="numbers">2</button>
+    <button onclick="appendNumber(3)" class="numbers">3</button>
+    </div>
+    <div class="row">
+    <button onclick="appendNumber(0)" class="numbers">0</button>
+    <button onclick="removeAnswer()" class="numbers">C</button>
+    <button onclick="checkAnswer()" class="numbers">E</button>
+    </div>
+  </div>
+  <div class="seconds">Time: <span id="seconds">0</span></div>
+  <!-- <button class="score" id="menuButton">Menu</button> -->
+  <!-- <div class="score" id="menuButton">Menu</div> -->
+  <div class="score">
+    <button id="menuButton"><a href="menu.html">MENU</a></button>
+    Score: <span id="score">0</span>
+    <button id="restartButton" onclick="restartPage()">RESTART</button>
+  </div>
+</div>
+  <div id="box" class="hidden">
+    <h3>Wrong!!! <br>Game Over!!!</h3>
+    <h5 id="score-display"></h5>
+    <button class="options" id="menux"><a href="menu.html">New Game</a></button>
+    <button class="options" id="high-scores">Check High Scores</a></button>
+  </div>
+  <div id="box2" class="hidden">
+    <h3>Congratulations!!!</h3>
+    <h3 id="complete-time"></h3>
+    <h5 id="complete-score"></h5>
+    <button class="options" id="menuy"><a href="menu.html">New game</a></button>
+    <button class="options" id="high-scores-2">Check High Scores</a></button>
+  </div>
+
+  <script>
+
+    // Generate random numbers for the first two text boxes
+    document.getElementById('num1').value = getRandomNumber(1, 100);
+    document.getElementById('num2').value = getRandomNumber(1, 100);
+
+    var boxVisible = false;
+    var seconds = 0;
+    var timer;
+    var scoreDisplay = document.getElementById("score-display");
+    var completeScore = document.getElementById("complete-score");
+    var completeTime = document.getElementById("complete-time");
+    let score = 0;
+    let prevSeconds=0;
+
+    function startTimer() {
+      timer = setInterval(updateTimer, 1000);
+    }
+
+    function stopTimer() {
+      clearInterval(timer);
+    }
+
+    function updateTimer() {
+      seconds++;
+      document.getElementById('seconds').textContent = seconds;
+    }
+
+    function appendNumber(number) {
+      var resultInput = document.getElementById('result');
+      resultInput.value += number;
+    }
+
+    function retryAns(){
+      enableNumberButtons();
+      removeAnswer();
+      var box = document.getElementById("box");
+      box.classList.add("hidden");
+      startTimer();
+    }
+
+    function restartPage() {
+      location.reload(); // Reloads the current page
+    }
+
+    // function checkAnswerLength() {
+    //   var num1 = parseInt(document.getElementById('num1').value);
+    //   var num2 = parseInt(document.getElementById('num2').value);
+    //   var result = document.getElementById('result').value;
+
+    //   if (result.length === (num1 + num2).toString().length) {
+    //     checkAnswer();
+    //   }
+    // }
+
+    function removeAnswer(){
+      document.getElementById('result').value='';
+    }
+
+    function checkAnswer() {
+      var num1 = parseInt(document.getElementById('num1').value);
+      var num2 = parseInt(document.getElementById('num2').value);
+      var result = parseInt(document.getElementById('result').value);
+
+      if (result === num1 + num2) {
+        document.getElementById('num1').value = num1 + num2;
+        num1 = num1 + num2;
+        let a = 10*(15-(seconds-prevSeconds))+result;
+        if(a>0){
+          score+=a;
+        }
+        prevSeconds=seconds;
+        document.getElementById('score').textContent=score;
+
+        if (num1 >= 100) {
+          document.getElementById('num2').value = 200 - num1;
+        } else {
+          document.getElementById('num2').value = getRandomNumber(1, 100);
+        }
+
+        if (result === 100) {
+          disableNumberButtons();
+          stopTimer();
+          console.log(seconds);
+          // alert("Congratulations, you have completed the game in "+seconds+" seconds. Press OK to play again");
+          // window.location.reload();
+          document.getElementById("game-content").style.display = "none";
+          document.getElementById("box2").style.display = "block";
+
+          var box = document.getElementById("box2");
+          box.classList.remove("hidden");
+          completeTime.textContent = "You have finished the game in "+seconds+" seconds";
+          completeScore.textContent = "Your score is "+score;
+        }
+      }
+      else {
+        document.getElementsByTagName('button')[0].disabled = true;
+        disableNumberButtons();
+        stopTimer();
+        console.log("Game over!!");
+        // alert("Game over. Press OK to play again.");
+        // window.location.reload();
+        document.getElementById("game-content").style.display = "none";
+        document.getElementById("box").style.display = "block";
+        var box = document.getElementById("box");
+        box.classList.remove("hidden");
+        scoreDisplay.textContent = "Your score is "+score;
+      }
+
+      // Clear the third text box
+      document.getElementById('result').value = '';
+    }
+
+    function disableNumberButtons() {
+        var numberButtons = document.getElementsByClassName('numpad');
+
+        for (var i = 0; i < numberButtons.length; i++) {
+        var button = numberButtons[i];
+        button.disabled = true;
+        }
+    }
+
+    function enableNumberButtons() {
+        var numberButtons = document.getElementsByTagName('button');
+
+        for (var i = 0; i < numberButtons.length; i++) {
+        var button = numberButtons[i];
+        button.disabled = false;
+        }
+    }
+
+    function getRandomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    window.onload = startTimer();
+  </script>
+</body>
+</html>

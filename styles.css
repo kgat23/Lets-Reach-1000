@@ -1,0 +1,280 @@
+/* #num1{
+    width: 100px;
+    height: 50px;
+    font-size: 50px;
+    border: 0px;
+    color: aliceblue;
+    background-color: #393053;
+    text-align: center;
+}
+
+#num2{
+    width: 100px;
+    height: 50px;
+    font-size: 50px;
+    border: 0px;
+    color: aliceblue;
+    background-color: #393053;
+    text-align: center;
+}
+
+#result{
+    width: 100px;
+    height: 50px;
+    font-size: 50px;
+    border: 0px;
+    color: aliceblue;
+    background-color: #393053;
+    text-align: center;
+}
+
+.numbers{
+    height: 50px;
+    width: 50px;
+    font-size: 40px;
+    border: 0px;
+    margin: 10px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    background-color: aqua;
+}
+
+.numpad{
+    margin: 20px;
+    margin-left: 0px;
+    margin-right: 90px;
+}
+
+#seconds{
+    margin-right: 90px;
+}
+
+.hidden{
+    display: none;
+}
+
+#box,#box2{
+    width: 400px;
+    height: 150px;
+    margin-left: 32%;
+    text-align: center;
+}
+
+.options{
+    width: 100px;
+    height: 50px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    font-size: 30px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+#menu{
+    width: fit-content;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#score{
+    margin-right: 90px;
+} */
+
+html,body{
+    font-family: fantasy;
+    font-size: 50px;
+}
+
+body{
+    background-image: url('background.png');
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left: 0%;
+    /* background-color: green; */
+    margin-bottom: 0px;
+    /* margin-bottom: 0%; */
+}
+
+.menufont{
+    background-image: url('wooden-sign-hung-from-rope-removebg-preview\ 1.png');
+    width: 532px;
+    height: 255px;
+    margin-left: 420px;
+    margin-top: -15px;
+    background-repeat: no-repeat;
+}
+
+#num1{
+    width: 80px;
+    height: fit-content;
+    font-size: 50px;
+    background: none;
+    border: 0px;
+    margin-top: 140px;
+    margin-left: 46px;
+    font-weight: bold;
+    font-family: fantasy;
+    cursor: default;
+}
+
+#num2{
+    width: 80px;
+    height: fit-content;
+    font-size: 50px;
+    background: none;
+    border: 0px;
+    margin-top: 140px;
+    margin-left: 10px;
+    font-weight: bold;
+    font-family: fantasy;
+    cursor: default;
+}
+
+#result{
+    width: 110px;
+    height: fit-content;
+    font-size: 50px;
+    background: none;
+    border: 0px;
+    margin-top: 140px;
+    margin-left: 10px;
+    font-weight: bold;
+    font-family: fantasy;
+    cursor: default;
+}
+
+.numpad{
+    margin-left: 570px;
+    margin-top: -20px;
+}
+
+.numbers{
+    /* background-image: url('Rectangle\ 32.png'); */
+    width: 61px;
+    height: 61px;
+    /* background-size: 300% 300%; */
+    /* background-image: linear-gradient(rgba(255,255,255,0.24),rgba(178, 57, 235, 0.072)); */
+    background-color: rgba(255,255,255,0.24);
+    backdrop-filter: blur(17px);
+    border-radius: 12px;
+    margin-left: 5px;
+    margin-bottom: 1.1px;
+    font-family: fantasy;
+    font-size: 40px;
+    border-color: rgba(0,0,0,0.24);
+    box-shadow: inset;
+}
+
+#seconds,#score{
+    margin-left: 20px;
+    color: black;
+}
+
+.seconds{
+    margin-left: 600px;
+    margin-bottom: -9px;
+    /* margin-top: 11px; */
+    color: black;
+    margin-top: 25px;
+    /* border: 5px;
+    border-color: black; */
+}
+
+.score{
+    margin-left: 557px;
+    margin-bottom: 10px;
+    /* margin-top: 11px; */
+    color: black;
+    margin-top: 25px;
+}
+
+#menuButton{
+    margin-left: -500px;
+    margin-right: 354px;
+    background-color: rgba(255,255,255,0.24);
+    backdrop-filter: blur(17px);
+    border-radius: 12px;
+    width: 135px;
+    height: 50px;
+    font-family: fantasy;
+    font-size: 35px;
+    margin-bottom: 10px;
+    border-color: rgba(0,0,0,0.24);
+    box-shadow: inset;
+    /* padding-bottom: 10px; */
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    cursor: default;
+}
+
+#restartButton{
+    margin-left: 400px;
+    background-color: rgba(255,255,255,0.24);
+    backdrop-filter: blur(17px);
+    border-radius: 12px;
+    width: 135px;
+    height: 50px;
+    font-family: fantasy;
+    font-size: 35px;
+    margin-bottom: 10px;
+    border-color: rgba(0,0,0,0.24);
+    box-shadow: inset;
+    /* padding-bottom: 10px; */
+}
+
+#box{
+    /* margin-left: 448px; */
+    margin-top: 134px;
+    /* border: 1px;
+    border-color: black; */
+}
+
+h3{
+    text-align: center;
+}
+
+.options{
+    background-color: rgba(255,255,255,0.24);
+    backdrop-filter: blur(17px);
+    border-radius: 12px;
+    border-color: rgba(0,0,0,0.24);
+    box-shadow: inset;
+    /* margin-left: 50%; */
+    /* margin-left: 600px; */
+    font-family: fantasy;
+    font-size: 40px;
+    display: block;
+}
+
+#menux{
+    margin-left: 45%;
+    margin-bottom: 50px;
+}
+
+#high-scores{
+    margin-left: 40%;
+    margin-bottom: 52px;
+}
+
+h5{
+    text-align: center;
+}
+
+#menuy{
+    margin-left: 45%;
+    margin-bottom: 50px;
+}
+
+#high-scores-2{
+    margin-left: 40%;
+    margin-bottom: 69px;
+}
+
