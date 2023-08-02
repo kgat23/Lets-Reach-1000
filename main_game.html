@@ -142,13 +142,13 @@
         prevSeconds=seconds;
         document.getElementById('score').textContent=score;
 
-        if (num1 >= 100) {
-          document.getElementById('num2').value = 200 - num1;
+        if (num1 >= 900) {
+          document.getElementById('num2').value = 1000 - num1;
         } else {
           document.getElementById('num2').value = getRandomNumber(1, 100);
         }
 
-        if (result === 100) {
+        if (result === 1000) {
           disableNumberButtons();
           stopTimer();
           console.log(seconds);
